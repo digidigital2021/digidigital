@@ -341,30 +341,30 @@
                 <div class="heading">
                   <h3>Contact form</h3>
                 </div>
-                <form>
+                <form action="https://sheetdb.io/api/v1/7il1tshmq9aqd" method="post" id="sheetdb-form">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstname">First Name</label>
-                        <input id="firstname" type="text" class="form-control">
+                        <input id="firstname" type="text" name="data[firstname]" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="lastname">Last Name</label>
-                        <input id="lastname" type="text" class="form-control">
+                        <input id="lastname" type="text" name="data[lastname]" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input id="email" type="text" class="form-control">
+                        <input id="email" type="text" name="data[email]" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input id="subject" type="text" class="form-control">
+                        <input id="subject" type="text" name="data[sub]" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -534,6 +534,31 @@
       </footer>
     </div>
     <!-- Javascript files-->
+
+    <script>
+      var form = document.getElementById('sheetdb-form');
+              form.addEventListener("submit", e => {
+                e.preventDefault();
+                fetch(form.action, {
+                    method : "POST",
+                    body: new FormData(document.getElementById("sheetdb-form")),
+                }).then(
+                    response => response.json()
+                ).then((html) => {
+      
+                  document.getElementById("sheetdb-form").reset();
+                  alert("Thanks for Contacting us..! We Will Contact You Soon...")
+                  //new page open on submit
+                  //window.open('th.html', '_blank');
+      
+                });
+              });
+  
+       
+      
+          </script>
+
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

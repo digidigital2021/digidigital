@@ -6,3 +6,5 @@ Allow: /contact.html
 Allow: /career.html
 Allow: /privacy-policy.html
 Allow: /terms.html
+
+Sitemap: https://digidigital.co.in/sitemap.xml

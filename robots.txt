@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /contact.html
+Allow: /career.html
+Allow: /privacy-policy.html
+Allow: /terms.html
